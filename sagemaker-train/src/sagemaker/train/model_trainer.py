@@ -859,7 +859,7 @@ class ModelTrainer(BaseModel):
                 sagemaker_session=self.sagemaker_session,
                 container_entrypoint=training_request["algorithm_specification"].container_entrypoint,
                 container_arguments=training_request["algorithm_specification"].container_arguments,
-                input_data_config=training_request["input_data_config"],
+                input_data_config=training_request["input_data_config"] or [],
                 hyper_parameters=training_request["hyper_parameters"],
                 environment=training_request["environment"],
             )
